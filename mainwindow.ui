@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>932</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">color: rgb(52, 101, 164);
+background-color: rgb(233, 185, 110);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>160</y>
+      <width>89</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 700 italic 11pt &quot;Yrsa&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Quadrado</string>
+    </property>
+   </widget>
+   <widget class="Myframe" name="frame">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>150</y>
+      <width>350</width>
+      <height>250</height>
+     </rect>
+    </property>
+    <property name="tabletTracking">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(92, 53, 102);
+background-color: rgb(46, 52, 54);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>230</y>
+      <width>89</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 700 italic 11pt &quot;Yrsa&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Ponto</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>300</y>
+      <width>89</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 700 italic 11pt &quot;Yrsa&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Reta</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_4">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>370</y>
+      <width>89</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 700 italic 11pt &quot;Yrsa&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Limpar</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>932</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actiontrash_can">
+   <property name="text">
+    <string>Limpar Tela</string>
+   </property>
+  </action>
+  <action name="actionpen_menu">
+   <property name="text">
+    <string>pen menu</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>Myframe</class>
+   <extends>QFrame</extends>
+   <header>myframe.h</header>
+   <container>1</container>
+   <slots>
+    <slot>DrawRect()</slot>
+    <slot>DrawPoint()</slot>
+    <slot>DrawLine()</slot>
+    <slot>ClearForms()</slot>
+   </slots>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>frame</receiver>
+   <slot>DrawRect()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>244</x>
+     <y>197</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>540</x>
+     <y>239</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_3</sender>
+   <signal>clicked()</signal>
+   <receiver>frame</receiver>
+   <slot>DrawPoint()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>261</x>
+     <y>263</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>413</x>
+     <y>297</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>frame</receiver>
+   <slot>DrawLine()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>238</x>
+     <y>334</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>424</x>
+     <y>359</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_4</sender>
+   <signal>clicked()</signal>
+   <receiver>frame</receiver>
+   <slot>ClearForms()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>246</x>
+     <y>396</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>439</x>
+     <y>407</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
