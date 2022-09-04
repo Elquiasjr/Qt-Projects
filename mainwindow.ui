@@ -21,8 +21,8 @@ background-color: rgb(233, 185, 110);</string>
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>190</x>
-      <y>160</y>
+      <x>180</x>
+      <y>260</y>
       <width>89</width>
       <height>25</height>
      </rect>
@@ -31,7 +31,7 @@ background-color: rgb(233, 185, 110);</string>
      <string notr="true">font: 700 italic 11pt &quot;Yrsa&quot;;</string>
     </property>
     <property name="text">
-     <string>Quadrado</string>
+     <string>Imprime</string>
     </property>
    </widget>
    <widget class="Myframe" name="frame">
@@ -51,61 +51,14 @@ background-color: rgb(233, 185, 110);</string>
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(92, 53, 102);
-background-color: rgb(46, 52, 54);</string>
+background-color: rgb(46, 52, 54);
+border:none;</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
     </property>
     <property name="frameShadow">
      <enum>QFrame::Plain</enum>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_3">
-    <property name="geometry">
-     <rect>
-      <x>190</x>
-      <y>230</y>
-      <width>89</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 700 italic 11pt &quot;Yrsa&quot;;</string>
-    </property>
-    <property name="text">
-     <string>Ponto</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>190</x>
-      <y>300</y>
-      <width>89</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 700 italic 11pt &quot;Yrsa&quot;;</string>
-    </property>
-    <property name="text">
-     <string>Reta</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_4">
-    <property name="geometry">
-     <rect>
-      <x>190</x>
-      <y>370</y>
-      <width>89</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 700 italic 11pt &quot;Yrsa&quot;;</string>
-    </property>
-    <property name="text">
-     <string>Limpar</string>
     </property>
    </widget>
   </widget>
@@ -142,6 +95,7 @@ background-color: rgb(46, 52, 54);</string>
     <slot>DrawPoint()</slot>
     <slot>DrawLine()</slot>
     <slot>ClearForms()</slot>
+    <slot>DrawAll()</slot>
    </slots>
   </customwidget>
  </customwidgets>
@@ -151,63 +105,15 @@ background-color: rgb(46, 52, 54);</string>
    <sender>pushButton_2</sender>
    <signal>clicked()</signal>
    <receiver>frame</receiver>
-   <slot>DrawRect()</slot>
+   <slot>DrawAll()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>244</x>
-     <y>197</y>
+     <x>234</x>
+     <y>297</y>
     </hint>
     <hint type="destinationlabel">
      <x>540</x>
      <y>239</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_3</sender>
-   <signal>clicked()</signal>
-   <receiver>frame</receiver>
-   <slot>DrawPoint()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>261</x>
-     <y>263</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>413</x>
-     <y>297</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton</sender>
-   <signal>clicked()</signal>
-   <receiver>frame</receiver>
-   <slot>DrawLine()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>238</x>
-     <y>334</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>424</x>
-     <y>359</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_4</sender>
-   <signal>clicked()</signal>
-   <receiver>frame</receiver>
-   <slot>ClearForms()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>246</x>
-     <y>396</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>439</x>
-     <y>407</y>
     </hint>
    </hints>
   </connection>
