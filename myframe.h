@@ -7,15 +7,16 @@
 #include <QList>
 #include <QPainter>
 
-class ObjectGen : public QRect, public QPoint, public QLine, public QPainter {
+class ObjectGen : public QRect, public QPoint, public QLine, public QPainter, public QFrame{
 public:
-    //virtual void drawObject();
+    void drawObj(QPainter *paint);
 };
 
 class ObjectRec : public ObjectGen {
-    QRect rec;
+
 public:
-    //virtual void drawObject();
+    void drawObj(QPainter *paint);
+    QRect rec;
 };
 
 class ObjectPoint : public ObjectGen {
@@ -26,6 +27,8 @@ class ObjectPoint : public ObjectGen {
 class ObjectLine : public ObjectGen {
     QLine line;
 };
+
+
 class Myframe : public QFrame
 {
     Q_OBJECT
@@ -48,5 +51,6 @@ public slots:
 signals:
 
 };
+
 
 #endif // MYFRAME_H

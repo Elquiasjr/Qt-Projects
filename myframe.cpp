@@ -10,18 +10,21 @@ Myframe::Myframe(QWidget *parent)
 
 }
 
-//void ObjectRec::drawObject(){
-
-
-//}
+void ObjectRec::drawObj (QPainter *paint){
+    rec.setRect(160,120,40,40);
+    paint->drawRect(this->rec);
+    update();
+}
 
 void Myframe::paintEvent(QPaintEvent *event)
 {
     QFrame::paintEvent(event);
     QPainter painter(this);
     painter.setPen(QPen(Qt::darkCyan, 2));
+    QPainter *paints = &painter;
 
-    painter.drawRect(*rectang);
+
+    rectang->drawObj(paints);
     //painter.drawPoint();
     //painter.drawLine();
 }
@@ -29,7 +32,7 @@ void Myframe::paintEvent(QPaintEvent *event)
 
 void Myframe::DrawAll(){
     cout << "Entrou no Myfram::ClearForms" << endl;
-    displayFile[0]->setRect(160,120,40,40);
+
     //obj2->setX(175);
     //obj2->setY(140);
     //displayFile[2]->setLine(300,500,10,10);
