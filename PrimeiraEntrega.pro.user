@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 8.0.1, 2022-09-05T10:39:58. -->
+<!-- Written by QtCreator 8.0.1, 2022-09-06T20:56:57. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -235,9 +235,8 @@
     <valuelist type="QVariantList" key="CustomOutputParsers"/>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">PrimeiraEntrega2</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/home/elquiasjr/Documents/UTFPR_4/Qt-Projects/Entrega01/PrimeiraEntrega/PrimeiraEntrega.pro</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">/home/elquiasjr/Documents/UTFPR_4/Qt-Projects/Entrega01/PrimeiraEntrega/PrimeiraEntrega.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/home/elquiasjr/Documents/UTFPR_4/Qt-Projects/PrimeiraEntrega.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">/home/elquiasjr/Documents/UTFPR_4/Qt-Projects/PrimeiraEntrega.pro</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>

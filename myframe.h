@@ -6,37 +6,54 @@
 #include <QRect>
 #include <QList>
 #include <QPainter>
+#include <list>
 
-class ObjectGen : public QRect, public QPoint, public QLine, public QPainter, public QFrame{
+using namespace std;
+
+class ObjectGen {
 public:
-    void drawObj(QPainter *paint);
+    int type;
+    //virtual void drawObj();
+    virtual ~ObjectGen()
+    { }
+    void redirectDraw(ObjectGen *x, QPainter *painter);
 };
 
-class ObjectRec : public ObjectGen {
+class ObjectRec : public QRect, public ObjectGen {
 
 public:
-    void drawObj(QPainter *paint);
+    int type = 1;
     QRect rec;
+    //void drawObj();
+    virtual ~ObjectRec()
+    { }
 };
 
-class ObjectPoint : public ObjectGen {
+class ObjectPoint : public QPoint, public ObjectGen {
+public:
     QPoint point;
-
+    int type = 2;
+    virtual ~ObjectPoint()
+    { }
 };
 
-class ObjectLine : public ObjectGen {
+class ObjectLine : public QLine, public ObjectGen {
+public:
+    int type = 3;
     QLine line;
+    virtual ~ObjectLine()
+    { }
 };
 
 
-class Myframe : public QFrame
+class Myframe : public QFrame, ObjectRec
 {
     Q_OBJECT
 private:
-    ObjectRec *rectang = (ObjectRec*)malloc(sizeof(ObjectRec));
-//    ObjectPoint *ponto = (ObjectPoint*)malloc(sizeof(ObjectPoint));
-//    ObjectLine *linha = (ObjectLine*)malloc(sizeof(ObjectLine));
-    QList<ObjectGen *> displayFile = {rectang};
+    ObjectGen *rectang = (ObjectGen*)malloc(sizeof(ObjectGen));
+    ObjectGen *point = (ObjectGen*)malloc(sizeof(ObjectGen));
+    ObjectGen *line = (ObjectGen*)malloc(sizeof(ObjectGen));
+   QList<ObjectGen *> displayFile = {rectang, point, line};
 
 public:
     explicit Myframe(QWidget *parent = nullptr);
@@ -48,6 +65,7 @@ public slots:
     //void DrawPoint();
     //void DrawLine();
     void DrawAll();
+
 signals:
 
 };

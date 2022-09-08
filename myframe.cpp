@@ -1,4 +1,4 @@
-#include "myframe.h"
+﻿#include "myframe.h"
 #include <QPainter>
 #include <iostream>
 
@@ -10,11 +10,15 @@ Myframe::Myframe(QWidget *parent)
 
 }
 
-void ObjectRec::drawObj (QPainter *paint){
-    rec.setRect(160,120,40,40);
-    paint->drawRect(this->rec);
-    update();
-}
+
+
+//void ObjectGen::drawObj (){
+//    cout << "hello world" ;
+//}
+
+//void ObjectRec::drawObj (){
+//    rec.setRect(160,120,40,40);
+//}
 
 void Myframe::paintEvent(QPaintEvent *event)
 {
@@ -22,58 +26,39 @@ void Myframe::paintEvent(QPaintEvent *event)
     QPainter painter(this);
     painter.setPen(QPen(Qt::darkCyan, 2));
     QPainter *paints = &painter;
-
-
-    rectang->drawObj(paints);
-    //painter.drawPoint();
-    //painter.drawLine();
+    rectang->type = 1;
+    point->type = 2;
+    line->type = 3;
+    for (ObjectGen *x : displayFile) {
+             redirectDraw(x, paints);
+        }
 }
 
+void ObjectGen::redirectDraw(ObjectGen *x, QPainter *painter){
+
+    if(x->type == 1){
+        ObjectRec *re = (ObjectRec*) x;
+        painter->drawRect(*re);
+        re->setRect(160,120,40,40);
+    }
+    else if(x->type == 2){
+        ObjectPoint *pt = (ObjectPoint*) x;
+        painter->drawPoint(*pt);
+        pt->setX(175);
+        pt->setY(140);
+    }
+    else if(x->type == 3){
+        ObjectLine *ln = (ObjectLine*) x;
+        painter->drawLine(*ln);
+        ln->setLine(300,500,10,10);
+    }
+}
 
 void Myframe::DrawAll(){
     cout << "Entrou no Myfram::ClearForms" << endl;
 
-    //obj2->setX(175);
-    //obj2->setY(140);
-    //displayFile[2]->setLine(300,500,10,10);
+
+    //
     update();
 }
 
-//void Myframe::ClearForms()
-//{
-//    cout << "entrou no Myframe::ClearForms" << endl;
-//    objetos.rec.setRect(0,0,0,0);
-//    objetos.point.setX(0);
-//    objetos.point.setY(0);
-//    objetos.line.setLine(0,0,0,0);
-//    update();
-//}
-
-//void Myframe::DrawRect()
-//{
-//    ClearForms();
-//    cout << "entrou no Myframe::DrawRect" << endl;
-//    objetos.rec.setRect(160,120,40,40);
-//    update();
-
-//}
-
-//void Myframe::DrawPoint()
-//{
-//    ClearForms();
-//    cout << "entrou no Myframe::DrawPoint" << endl;
-//    objetos.point.setX(175);
-//    objetos.point.setY(140);
-//    update();
-
-
-//}
-
-//void Myframe::DrawLine()
-//{
-//    ClearForms();
-//    cout << "entrou no Myframe::DrawLine" << endl;
-//    objetos.line.setLine(300,500,10,10);
-//    update();
-
-//}
