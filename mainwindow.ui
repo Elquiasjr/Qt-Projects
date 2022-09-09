@@ -18,7 +18,7 @@
 background-color: rgb(233, 185, 110);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="printButton">
     <property name="geometry">
      <rect>
       <x>180</x>
@@ -102,7 +102,7 @@ border:none;</string>
  <resources/>
  <connections>
   <connection>
-   <sender>pushButton_2</sender>
+   <sender>printButton</sender>
    <signal>clicked()</signal>
    <receiver>frame</receiver>
    <slot>DrawAll()</slot>
